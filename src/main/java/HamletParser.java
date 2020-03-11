@@ -38,7 +38,7 @@ public class HamletParser {
         return hamletData;
     }
 
-    public String changeHamletToLeon( String str) {
+    public String changeHamletToLeon(String str) {
         Pattern pattern = Pattern.compile("Hamlet", Pattern.CASE_INSENSITIVE);
         Matcher match = pattern.matcher(str);
         return match.replaceAll("LEON");
@@ -52,12 +52,12 @@ public class HamletParser {
 
     public Boolean FindHoratio(String hamlet) {
         Pattern pattern = Pattern.compile("Horatio", Pattern.CASE_INSENSITIVE);
-        return pattern.matches("\bHoratio\b", hamlet);
+        return pattern.matcher(hamlet).find();
     }
 
     public Boolean FindHamlet(String hamlet) {
         Pattern pattern = Pattern.compile("Hamlet", Pattern.CASE_INSENSITIVE);
-        return pattern.matches("\bHamlet\b", hamlet);
+        return pattern.matcher(hamlet).find();
     }
 
 }
